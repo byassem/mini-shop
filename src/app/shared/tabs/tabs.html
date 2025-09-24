@@ -1,1 +1,6 @@
-<p>tabs works!</p>
+<nav class="tabs">
+  @for(t of tabs; track t; let i = $index) {
+  <button [class.active]="t.active" (click)="activate(i)">{{ t.title }}</button>
+  }
+</nav>
+<ng-content></ng-content>

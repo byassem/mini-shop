@@ -1,11 +1,11 @@
 import { Directive, ElementRef, inject, Input, OnChanges, Renderer2 } from '@angular/core';
 
 @Directive({
-  selector: '[TabHighlight]',
+  selector: '[tabHighlight]',
   standalone: true,
 })
 export class TabHighlightDirective implements OnChanges {
-  @Input('tagHighlight') tag = '';
+  @Input('tabHighlight') tag = '';
   private el = inject(ElementRef);
   private r = inject(Renderer2);
 

@@ -1,1 +1,11 @@
-<p>modal works!</p>
+@if(open) {
+<div class="backdrop" (click)="close.emit()"></div>
+<div class="modal" role="dialog" aria-modal="true">
+  <header>
+    <ng-content select="[modal-title]"></ng-content>
+    <button type="button" (click)="close.emit()">✕</button>
+  </header>
+  <section><ng-content></ng-content></section>
+  <footer><ng-content select="[modal-actions]"></ng-content></footer>
+</div>
+}

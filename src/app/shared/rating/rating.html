@@ -1,1 +1,10 @@
-<p>rating works!</p>
+@for (s of stars; track s; let i = $index) {
+<button
+  type="button"
+  [attr.aria-label]="'rate ' + (i + 1)"
+  (click)="rate(i + 1)"
+  [class.filled]="i < value"
+>
+  ★
+</button>
+}

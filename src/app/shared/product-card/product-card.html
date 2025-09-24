@@ -1,1 +1,18 @@
-<p>product-card works!</p>
+<article class="card">
+  <img [src]="product.image" [alt]="product.title" />
+  <h3>{{ product.title }}</h3>
+
+  <p class="price">{{ product.price | price : 'FCFA' }}</p>
+
+  <ul class="tags">
+    @for (t of product?.tags ?? []; track t) {
+    <li [tabHighlight]="t">{{ t }}</li>
+    }
+  </ul>
+
+  <app-rating [value]="product.rating" (valueChange)="onRate($event)"></app-rating>
+
+  <button type="button" (click)="add.emit(product)" [disabled]="product.disabled">
+    Ajouter au panier
+  </button>
+</article>

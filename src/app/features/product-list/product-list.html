@@ -1,1 +1,8 @@
-<p>product-list works!</p>
+<h2>Catalogue ({{ products().length }})</h2>
+
+<section class="grid">
+  @for (p of products(); track p.id) {
+  <app-product-card [product]="p" (add)="onAdd($event)" (ratingChange)="onRatingChange($event)">
+  </app-product-card>
+  }
+</section>
